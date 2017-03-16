@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogApp</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/rails_defoult' %>
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <%= yield %>
+  	<div class="container">
+  	  <div class="row">
+  		<div class="col-md-2">
+  			<!-- TODO -->
+  		</div>
+  		<div class="col-md-10">
+      	  <%= render 'layouts/navigation_bar' %>
+      	  <%= yield %>	
+  		</div>	
+  	  </div>
+  	</div>
   </body>
 </html>

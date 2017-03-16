@@ -1,51 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h2>Logged user <%= current_user.email if user_signed_in? %></h2>
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Comments</th>
-      <th>Author</th>
-      <th>Last comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.comment.count %></td>
-        <td>
-          <table>
-            <tr><td><%= post.created_at.to_date %></td></tr>
-            <tr><td><%= post.user.email %></td></tr>
-          </table>
-        </td>
-        <td>
-          <table>
-            <% if post.comment.last.nil? %>
-              <tr><td>-</td></tr>
-              <tr><td>-</td></tr>
-            <% else %>
-              <tr><td><%= post.comment.last.created_at.to_date %></td></tr>
-              <tr><td><%= post.comment.last.user.email %></td></tr>
-            <% end %>
-          </table>
-        </td>
-        <td><%= link_to 'Show', post %></td>
-        <% if current_user === post.user %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
-<%= link_to 'Log out', destroy_user_session_path, :method => :delete if user_signed_in? %> 
+<% @posts.each do |post| %>
+  <div class="container-fluid" id="post">
+    <h1><%= link_to post.title, post %></h1>
+    <h5><%= post.created_at.to_s(:long) %></h5>
+  </div>
+<% end %>
