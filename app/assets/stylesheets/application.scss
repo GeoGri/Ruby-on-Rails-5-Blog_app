@@ -8,8 +8,15 @@ $silver: #777;
 $dark: #333;
 $blue: #2FAACE;
 $blue-dark: #198BAE;
+$nav-background: #F8F8F8;
 
 /* application */
+.col-md-10 {
+  padding-left: 0px
+}
+.col-md-2 {
+  position: relative;
+}
 .border-bottom {
 	border-bottom: 0.8px solid $light-silver;
 }
@@ -26,7 +33,7 @@ $blue-dark: #198BAE;
   color: $silver;
 }
 .blue, .blue:hover {
-  color: $blue;
+  color: $blue !important;
   text-decoration: none;
 }
 .btn-primary {
@@ -67,4 +74,25 @@ $blue-dark: #198BAE;
 }
 #name {
 	float: right;
+}
+
+.col-md-2 {
+  padding-right: 0;
+}
+
+/* left navbar */
+.navbar-fixed-left {
+  width: 140px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 139px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
 }
