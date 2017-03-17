@@ -1,3 +1,9 @@
-<p><%= comment.content %> <- add by <%= comment.user.email %></p>
-<%= comment.id %>
-<%= link_to 'Delete', post_comment_path(comment.post, comment), method: :delete %>
+<div class="border-top">
+  <h6>
+    <%= comment.user.email %>
+    <%= link_to 'Delete', post_comment_path(comment.post, comment),
+    		 method: :delete, class: "blue" if current_user === comment.user %>
+    <span class="right" "><%= time_ago_in_words comment.created_at %></span>
+  </h6>
+  <p><%= comment.content %></p>
+</div>

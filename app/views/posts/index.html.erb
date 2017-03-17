@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
 <% @posts.each do |post| %>
-  <div class="container-fluid" id="post">
+  <div class="border-bottom" id="post">
     <h1><%= link_to post.title, post %></h1>
     <h5><%= post.created_at.to_s(:long) %></h5>
   </div>

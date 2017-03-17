@@ -1,20 +1,55 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "normalize";
 
-/* post controller */
-
-/* colors */
+  /* colors */
 $light-silver: #E7E7E7;
 $silver: #777;
 $dark: #333;
+$blue: #2FAACE;
+$blue-dark: #198BAE;
 
+/* application */
+.border-bottom {
+	border-bottom: 0.8px solid $light-silver;
+}
+.border-top {
+	border-top: 0.8px solid $light-silver;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+.silver {
+  color: $silver;
+}
+.blue, .blue:hover {
+  color: $blue;
+  text-decoration: none;
+}
+.btn-primary {
+  background-color: $blue;
+  float: right;
+  margin: 10px;
+  &:hover {
+    background-color: $blue-dark
+  }
+}
+
+/* navbar */
+#nav_name:hover {
+  color: $silver;
+}
+
+/* post controller */
 #post {
-  border-bottom: 0.8px solid $light-silver;
   h1, h5 {
     color: $silver;
+    padding-left: 10px;
   	a {
   	  color: $silver;
-  	  text-decoration: none;
   	  &:hover {
   	    color: $dark;
   		text-decoration: none;
@@ -24,11 +59,12 @@ $dark: #333;
 }
 
 /* comment controller */
-
-#comments_count {
-	border-bottom: 0.8px solid $light-silver;
+.post_show{
+  color: $silver;
+}
+.c_dark {
+  color: $dark;
 }
 #name {
 	float: right;
-	color: $silver;
 }
