@@ -17,5 +17,12 @@
 	  <%= render @post.comment %>	
 	</div>
 	<br/>
+	<% if !user_signed_in? %>
+      <div class="jumbotron text-center">
+      	<h3>You must signed in to add a comment and back here :)</h3>
+      	<%= link_to 'Sign in', user_session_path, class: "btn btn-lg btn-primary", style: "float: none;" %>
+      </div>
+	<% else %>
       <%= render "comments/form" %>
+    <% end %>
 </div>

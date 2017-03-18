@@ -1,0 +1,35 @@
+<% if !current_page? "/about" %>
+
+  <tr>
+    <td>
+      <%= link_to root_path, style: "color: #333;" do %>
+        <span class="glyphicon glyphicon-align-right"></span> Posts
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to about_path do %>
+        <span class="glyphicon glyphicon-edit"></span> About
+      <% end %>
+    </td>
+  </tr>
+
+<% else %>
+
+  <tr>
+    <td>
+      <%= link_to root_path do %>
+        <span class="glyphicon glyphicon-align-right"></span> Posts
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to about_path, style: "color: #333;" do %>
+        <span class="glyphicon glyphicon-edit"></span> About
+      <% end %>
+    </td>
+  </tr>
+
+<% end %>

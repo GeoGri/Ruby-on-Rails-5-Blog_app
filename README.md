@@ -1,24 +1,34 @@
-# README
+# BLOG APPLICATION 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+>This BLOG APP was created in Rails 5.
 
-Things you may want to cover:
+## Examples
+- no sizeboxing
+- validations
+- devise
+- normalize.css
+- bootstrap
 
-* Ruby version
+## Overview
+Demo application with users that can write a blogs and get comments from 
+another users. Only log user can write a comment and post but not logged 
+can only open and read posts with comments. 
 
-* System dependencies
+## Getting Started
 
-* Configuration
+1. Download the repository and unzip.
 
-* Database creation
+2. Go to the directory where you unzip application.
 
-* Database initialization
+3. Install Rails at the command prompt if you haven't yet:
 
-* How to run the test suite
+        $ gem install rails
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Change directory to 'myapp' and start the web server:
 
-* Deployment instructions
+		$ cd myapp
+		$ rails s
 
-* ...
+	run with '--help' or 'h' for options.
+
+5. Using a browser, go to 'http://localhost:3000' and you'll see the application.

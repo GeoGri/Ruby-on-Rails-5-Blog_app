@@ -2,6 +2,20 @@
 @import "bootstrap";
 @import "normalize";
 
+
+html, body, .container {
+  height: 100%;
+}
+.container {
+  display: table;
+  padding: 0;
+  width: 100%;
+}
+.row {
+  height: 100%;
+  display: table-row;
+}
+
   /* colors */
 $light-silver: #E7E7E7;
 $silver: #777;
@@ -11,12 +25,6 @@ $blue-dark: #198BAE;
 $nav-background: #F8F8F8;
 
 /* application */
-.col-md-10 {
-  padding-left: 0px
-}
-.col-md-2 {
-  position: relative;
-}
 .border-bottom {
 	border-bottom: 0.8px solid $light-silver;
 }
@@ -35,6 +43,10 @@ $nav-background: #F8F8F8;
 .blue, .blue:hover {
   color: $blue !important;
   text-decoration: none;
+  &:hover {
+    color: $blue-dark !important;
+    text-decoration: none;
+  }
 }
 .btn-primary {
   background-color: $blue;
@@ -76,23 +88,79 @@ $nav-background: #F8F8F8;
 	float: right;
 }
 
+
+
+
 .col-md-2 {
-  padding-right: 0;
-}
-
-/* left navbar */
-.navbar-fixed-left {
-  width: 140px;
-  position: fixed;
-  border-radius: 0;
   height: 100%;
+  padding-right: 0;
+  position: relative;
+}
+.col-md-10 {
+  padding: 0px
+}
+.nav-top {
+  border-left: none !important;
+  border-radius: 0 !important;
+}
+/* left navbar */
+#nav-left {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%; 
+  width: 100%;
+  background-color: $nav-background;
+  border-right: 0.8px solid $light-silver;
+  table {
+    width: 100%;
+    tr {
+      color: $silver;
+      td {
+
+        a {
+          color: $silver;
+          &:hover {
+            color: $dark;
+            text-decoration: none;
+          }
+        }
+      }
+      th {
+        h3 {
+          color: $blue;
+        }
+      }
+    }
+
+
+    tr th, tr td {
+      float: right;
+    }
+    tr th{
+      padding: 50px 20px 14px 0;
+    }
+    tr td{
+      padding: 15px;
+    }
+  }
 }
 
-.navbar-fixed-left .navbar-nav > li {
-  float: none;  /* Cancel default li float: left */
-  width: 139px;
-}
-
-.navbar-fixed-left + .container {
-  padding-left: 160px;
+/* About */
+#about {
+  h1 {
+    color: $dark;
+  }
+  h4 {
+    a {
+      color: $blue;
+      &:hover {
+        color: $blue-dark;
+        text-decoration: none;
+      }
+    }
+    span {
+      color: $blue;
+    }
+  }
 }
