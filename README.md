@@ -24,9 +24,9 @@ can only open and read posts with comments.
 
         $ gem install rails
 
-4. Change directory to 'myapp' and start the web server:
+4. Start the web server:
 
-		$ cd myapp
+		$ cd name_of_directory
 		$ rails s
 
 	run with '--help' or 'h' for options.
