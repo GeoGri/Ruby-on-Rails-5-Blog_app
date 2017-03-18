@@ -1,6 +1,13 @@
-<% @posts.each do |post| %>
-  <div class="border-bottom" id="post">
-    <h1><%= link_to post.title, post %></h1>
-    <h5><%= post.created_at.to_s(:long) %></h5>
-  </div>
+<% if @posts.first.nil? %>
+  <div class="jumbotron text-center">
+      	<h3>There is no posts yet. You need to create one.</h3>
+      	<%= link_to 'Create post', new_post_path, class: "btn btn-lg btn-primary", style: "float: none;" %>
+      </div>
+<% else %>
+  <% @posts.each do |post| %>
+    <div class="border-bottom" id="post">
+      <h1><%= link_to post.title, post %></h1>
+      <h5><%= post.created_at.to_s(:long) %></h5>
+    </div>
+  <% end %>
 <% end %>
